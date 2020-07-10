@@ -1,44 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Video Image Masks in the Browser
+=====================================
 
-## Available Scripts
+Demo deployed @ https://tensorflow-body-pix-javascript-react-demo.netlify.app/.
 
-In the project directory, you can run:
+A quick demo of using [TensforFlow.js's](https://github.com/tensorflow/tfjs)
+[BodyPix Person Segmentation](https://github.com/tensorflow/tfjs-models/tree/master/body-pix)
+with [React.js](https://reactjs.org/).
 
-### `npm start`
+Please note: The code lacks error handling, proper component (and event listener)
+teardown, and has an awful `while (true)`.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The interesting bits are in [`/src/App.tsx`](/src/App.tsx). (The rest of the code is
+[create-react-app](https://github.com/facebook/create-react-app) boiler.)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+If you're interested in learning more, take a look at the following resources:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [Google's Blogpost About BodyPix Features](https://blog.tensorflow.org/2019/11/updated-bodypix-2.html)
+* [BodyPix README](https://github.com/tensorflow/tfjs-models/blob/master/body-pix/README.md)
+* [Google's Interactive/Live BodyPix Demo Playground](https://storage.googleapis.com/tfjs-models/demos/body-pix/index.html)
