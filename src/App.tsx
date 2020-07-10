@@ -2,6 +2,11 @@ import React from 'react';
 import './App.css';
 import * as bp from "@tensorflow-models/body-pix"
 
+const MEDIA_DIMENSIONS = Object.freeze({
+  WIDTH: 530,
+  HEIGHT: 300,
+});
+
 class App extends React.Component {
   private videoRef = React.createRef<HTMLVideoElement>();
   private canvasRef = React.createRef<HTMLCanvasElement>();
@@ -10,7 +15,12 @@ class App extends React.Component {
     const canvas = this.canvasRef.current!;
     const video = this.videoRef.current!;
 
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+    navigator.mediaDevices.getUserMedia({
+      video: {
+        width: { ideal: MEDIA_DIMENSIONS.WIDTH },
+        height: { ideal: MEDIA_DIMENSIONS.HEIGHT },
+      }, audio: false
+    })
       .then(stream => {
         video.srcObject = stream;
         video.play();
@@ -57,8 +67,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <div>
-          <video ref={this.videoRef} width="530" height="300" autoPlay={true} playsInline={true}></video>
-          <canvas ref={this.canvasRef} />
+          <video style={{ transform: 'rotateY(180deg)' }} ref={this.videoRef} width={MEDIA_DIMENSIONS.WIDTH} height={MEDIA_DIMENSIONS.HEIGHT} autoPlay={true} playsInline={true}></video>
+          <canvas ref={this.canvasRef} width={MEDIA_DIMENSIONS.WIDTH} height={MEDIA_DIMENSIONS.HEIGHT} />
         </div>
       </div>
     );
